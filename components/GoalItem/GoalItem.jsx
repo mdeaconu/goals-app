@@ -1,6 +1,7 @@
 import React from "react";
 import { Pressable, Text, View } from "react-native";
 import { styles } from "./GoalItem.style";
+import PropTypes from "prop-types";
 
 const GoalItem = (props) => {
   return (
@@ -14,6 +15,12 @@ const GoalItem = (props) => {
       </Pressable>
     </View>
   );
+};
+
+GoalItem.propTypes = {
+  onDeleteItem: PropTypes.func,
+  id: PropTypes.number,
+  text: PropTypes.string,
 };
 
 export default GoalItem;

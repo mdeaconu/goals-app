@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, TextInput, View, Image } from "react-native";
 import { styles } from "./GoalInput.style";
-import goal from "../../assets/images/goal.png";
+import PropTypes from "prop-types";
 
 const GoalInput = (props) => {
   const [enteredGoalText, setEnteredGoalText] = useState("");
@@ -39,6 +39,12 @@ const GoalInput = (props) => {
       </View>
     </Modal>
   );
+};
+
+GoalInput.propTypes = {
+  onAddGoal: PropTypes.func,
+  visible: PropTypes.bool,
+  onCancel: PropTypes.func,
 };
 
 export default GoalInput;
